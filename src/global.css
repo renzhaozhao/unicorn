@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 16 100% 97%; /* hsl(16 100% 97%) */
+    --foreground: 0 0% 0%; /* hsl(0 0% 0%) */
+
+    --card: 0 0% 100%; /* hsl(0 0% 100%) */
+    --card-foreground: 224 71.4% 4.1%; /* hsl(224 71% 4%) */
+
+    --popover: 0 0% 100%; /* hsl(0 0% 100%) */
+    --popover-foreground: 224 71.4% 4.1%; /* hsl(224 71% 4%) */
+
+    --primary: 25 97% 60%; /* hsl(25 97% 60%) */
+    --primary-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
+
+    --secondary: 220 14.3% 95.9%; /* hsl(220 14% 96%) */
+    --secondary-foreground: 220.9 39.3% 11%; /* hsl(221 39% 11%) */
+
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 210 5% 85%; /* hsl(210 5% 85%) */
+    --input: 220 13% 91%; /* hsl(220 13% 91%) */
+    --ring: 224 71.4% 4.1%; /* hsl(224 71% 4%) */
+
+    --error: 4 91% 59%; /* hsl(4 91% 59%) */
+    --light: 252 2% 55%; /* hsl(252 2% 55%) */
+    --blue: 233 100% 68%; /* hsl(233 100% 68%) */
+    --progress: 16 100% 69%; /* hsl(16 100% 69%) */
+
+    --radius: 0.5rem;
+    --btn-background: 200 10% 91%;
+    --btn-background-hover: 200 10% 89%;
+  }
+}
+
+@layer base {
+  .title {
+    font-family: 'Avenir';
+  }
+  .scrollbar::-webkit-scrollbar {
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+  }
+  .custom-scrollbar ::-webkit-scrollbar {
+    width: 5px;
+  }
+  .custom-scrollbar ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 5px;
+  }
+  * {
+    @apply md:custom-scrollbar;
+  }
+
+  body {
+    @apply bg-white text-foreground overflow-x-hidden;
+  }
+
+  a {
+    @apply cursor-pointer;
+  }
+
+  h1 {
+    @apply title font-bold;
+  }
+}
+
+.animate-in {
+  animation: animateIn 0.3s ease 0.15s both;
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
