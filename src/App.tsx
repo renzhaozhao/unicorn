@@ -1,11 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import viteLogo from '/vite.svg'
 
 import reactLogo from './assets/react.svg'
+import { supabase } from './utils/supabase'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    const init = async () => {
+      const { data, error } = await supabase.from('user').select('*')
+      if (error) {
+        console.log(error)
+        return
+      }
+      console.log(data)
+    }
+
+    init()
+  }, [])
 
   return (
     <>
