@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import viteLogo from '/vite.svg'
+import { Button } from '@/components/ui/button'
 
 import reactLogo from './assets/react.svg'
 import { supabase } from './utils/supabase'
@@ -32,6 +33,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <Button>Click me</Button>
       <div className="card">
         <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
         <p>
